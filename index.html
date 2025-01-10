@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+<script type = "text/javascript">
+    function calc()
+    {
+        var m1,m2,m3,m4,m5avg = 0,total = 0, result = "",grade = "";
+        m1 = parseInt(document.form1.j.value);
+        m2 = parseInt(document.form1.cn.value);
+        m3 = parseInt(document.form1.osp.value);
+        m4 = parseInt(document.form1.db.value);
+        m5 = parseInt(document.form1.wp.value);
+        total = m1+m2+m3+m4+m5;
+        avg = total/5;
+        if( m1 < 50 || m2 < 50 || m3 < 50 || m4 < 50 || m5 < 50)
+        {
+            result = "fail";
+            grade = "D";
+        }
+        else if(avg >= 100)
+        {
+            result = "Distinction";
+            grade = "A+";
+        }
+        else if(avg >= 90)
+        {
+            result = "First class";
+            grade = "A";
+        }
+        else if(avg >= 80 && avg < 90)
+        {
+            result = "Second class";
+            grade = "B";
+        }
+        else if(avg >= 70 && avg < 80)
+        {
+            result = "Pass class";
+            grade = "C";
+        }
+        else if(avg >= 60 && avg < 70)
+        {
+            result = "Pass class";
+            grade = "D";
+        }
+        else  if (avg >= 50 && avg < 60)
+        {
+            result = "Fail";
+            Grade = "E";
+        }
+        document.form1.result.value = result;
+        document.form1.grade.value = grade;
+        document.form1.total.value = total;
+        document.form1.average.value = avg;
+       
+    }
+</script>
+</head>
+<style>
+    body{
+    background-color: rgba(220, 243, 10, 0.5);
+    font-family: 'Times New Roman', Times, serif;
+}
+.form{
+    width: 500px;
+    margin: auto;
+    margin-top: 250px;
+    margin-bottom: 250px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    box-shadow: 5px 5px 6px black;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+}
+.form h2{
+    color: #d9ff02;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+.input input{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+input:hover{background-color: rgba(251, 255, 4, 0.3);}
+input:focus{background-color: rgba(220, 243, 10, 0.5);}
+input:active{background-color: aquamarine;}
+div{
+    padding: 10px;
+}
+table{
+    color:black;
+    padding:0.2em;
+    text-align: center;
+    position: relative;
+    width:100%;
+    background-color: rgba(255, 255, 255, 0.644);
+}
+.dob{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+table input{
+    width:50%;
+}
+
+table{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    
+}
+
+</style>
+<body>
+    <div class="form">
+        <h2>STUDENT MARKS</h2>
+         <!--Roll no div-->
+         <div class="input">
+            <label for="name">Roll No</label>
+            <input type="text" name="rollno" id="rollno" class="clear-input">
+        </div>
+        <!--name div-->
+        <div class="input">
+            <label for="userName">Name</label>
+            <input type="text" name="userName" id="userName" class="clear-input">
+        </div>
+    <form name = "form1">
+        <!--table 1-->
+        <table border="1px">
+            <thead>
+            <tr>
+                <td colspan = "2" align = "center">Subject Marks</td>
+            </tr>
+            <tr>
+                <td>Java</td>
+                <td><input type = "text" name = "j" /></td>
+            </tr>
+            <tr>
+                <td>Computer Network</td>
+                <td><input type = "text" name = "cn" /></td>
+            </tr>
+            <tr>
+                <td>Oprating System Programming</td>
+                <td><input type = "text" name = "osp" /></td>
+            </tr>
+            <tr>
+                <td>DataBase</td>
+                <td><input type = "text" name = "db" /></td>
+            </tr>
+            <tr>
+                <td>Web Programming</td>
+                <td><input type = "text" name = "wp" /></td>
+            </tr>
+            </thead>
+        </tbody>
+            <!--table2-->
+            <table border="1px">
+            <thead>
+            <tr>
+               <td colspan = "2" align = "center"><input type = "button"   onclick = "calc()"value = "Calculte" /></td>
+            </tr>           
+            <tr>
+                <td>Total</td>
+                <td><input type = "text" name = "total"/></td>
+
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td><input type = "text" name = "average" /></td>
+            </tr>
+            <tr>
+                <td>Result</td>
+                <td><input type = "text" name = "result" /></td>
+            </tr>
+            <tr>
+                <td>Grade</td>
+                <td><input type = "text" name = "grade"/></td>
+            </tr>
+            </thead>
+        </tbody>
+        </table>
+    </form>
+</body>
+</html>
